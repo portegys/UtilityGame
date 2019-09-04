@@ -1,2 +1,0 @@
-# UtilityGame
-The Utility Game

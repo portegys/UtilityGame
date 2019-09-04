@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- JNLP File for Utility Game Player Applet --> 
+<jnlp spec="1.0+" codebase="http://tom.portegys.com/research/UtilityGame/"
+      href="http://tom.portegys.com/research/UtilityGame/gameplayer.jnlp">
+   <information>
+      <title>Utility Game Player</title>
+      <vendor>Illinois State University</vendor>
+      <description>Utility Game Player</description>
+      <description kind="short">A Utility Game for investigating choice-making behavior.</description>
+      <offline-allowed/>
+   </information>
+   <security>
+   </security>
+   <resources>
+      <j2se version="1.4+" href="http://java.sun.com/products/autodl/j2se"/>
+      <jar href="GamePlayer.jar"/>
+   </resources>
+   <applet-desc
+      documentBase="http://tom.portegys.com/research/UtilityGame"
+      name="GamePlayer"
+      main-class="UtilityGame.GamePlayer"
+      width="500"
+      height="600">
+      <param name="MasterHost" value="localhost"/>
+   </applet-desc>
+</jnlp> 
+
