@@ -20,7 +20,7 @@ import java.rmi.*;
 
 
 public interface GameAction extends java.rmi.Remote {
-    int register(GameUpdate o) throws RemoteException;
+   int register(GameUpdate o) throws RemoteException;
 
-    void unregister(GameUpdate o) throws RemoteException;
+   void unregister(GameUpdate o) throws RemoteException;
 }

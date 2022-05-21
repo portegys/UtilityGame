@@ -20,31 +20,31 @@ import java.rmi.*;
 
 
 public interface GameUpdate extends java.rmi.Remote {
-    // Start game.
-    void startGame(int gameNum) throws RemoteException;
+   // Start game.
+   void startGame(int gameNum) throws RemoteException;
 
-    // Stop game; return utility.
-    double stopGame(String[] Avals, String[] Xvals, String[] Svals,
-        String[] Yvals, String[] Dvals) throws RemoteException;
+   // Stop game; return utility.
+   double stopGame(String[] Avals, String[] Xvals, String[] Svals,
+                   String[] Yvals, String[] Dvals) throws RemoteException;
 
-    // Start round.
-    void startRound(int roundNum, boolean[] enabledItems, String[] Avals,
-        String[] Xvals, String[] Yvals, boolean allowChoiceRelease,
-        double choiceReleaseFee) throws RemoteException;
+   // Start round.
+   void startRound(int roundNum, boolean[] enabledItems, String[] Avals,
+                   String[] Xvals, String[] Yvals, boolean allowChoiceRelease,
+                   double choiceReleaseFee) throws RemoteException;
 
-    // Stop round; return player item choice.
-    int stopRound() throws RemoteException;
+   // Stop round; return player item choice.
+   int stopRound() throws RemoteException;
 
-    // Sum round; let players see others' choices.
-    void sumRound(String[] Svals, String[] Dvals, double noise)
-        throws RemoteException;
+   // Sum round; let players see others' choices.
+   void sumRound(String[] Svals, String[] Dvals, double noise)
+   throws RemoteException;
 
-    // Get player id.
-    int getID() throws RemoteException;
+   // Get player id.
+   int getID() throws RemoteException;
 
-    // Supply game notification.
-    void gameNotification(String note) throws RemoteException;
+   // Supply game notification.
+   void gameNotification(String note) throws RemoteException;
 
-    // Drop master connection.
-    void dropConnection() throws RemoteException;
+   // Drop master connection.
+   void dropConnection() throws RemoteException;
 }
