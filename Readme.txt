@@ -24,8 +24,11 @@ comes with Java, or with an archiving tool such as WinRAR, available at
 www.rarlab.com. The system can then be built by clicking the buildgame.bat
 file, and tested with the rungame.bat file.
 
-The Game Player is a signed Java applet that will run in most browsers,
-including Internet Explorer. It is available at:
+The Game Player is a signed Java jar that will run as an application:
+
+java -jar GamePlayer.jar [-MasterHost <IP address of master host>]
+
+or an applet in most browsers, including Internet Explorer. It is available at:
 
 tom.portegys.com/research/UtilityGame/gameplayer.html
 

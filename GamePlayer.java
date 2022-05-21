@@ -895,6 +895,11 @@ public class GamePlayer extends JApplet implements GameUpdate, ActionListener, R
       // Set master host IP address.
       if ((args.length == 0) || (args.length == 1))
       {
+         if ((args.length == 1) && args[0].equals("-help"))
+         {
+            System.err.println("Usage: java UtilityGame.GamePlayer [-MasterHost <master IP address>]");
+            System.exit(0);
+         }
          player.host = "localhost";
       }
       else if (args.length == 2)
