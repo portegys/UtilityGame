@@ -1,9 +1,9 @@
 set OLDCLASSPATH=%CLASSPATH%
 set CLASSPATH=.
-start java -classpath GameMaster.jar UtilityGame.GameMaster
+start java -jar GameMaster.jar
 echo Wait for GameMaster to be ready
 pause
-appletviewer gameplayer.html
+start java -jar GamePlayer.jar
 set CLASSPATH=%OLDCLASSPATH%
 set OLDCLASSPATH=
 
