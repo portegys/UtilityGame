@@ -26,19 +26,17 @@ file, and tested with the rungame.bat file.
 
 The Game Player is a signed Java jar that will run as an application:
 
-java -jar GamePlayer.jar [-MasterHost <IP address of master host>]
+java -jar GamePlayer.jar
 
-or an applet in most browsers, including Internet Explorer. It is available at:
+or using appletviewer:
 
-tom.portegys.com/research/UtilityGame/gameplayer.html
+appletviewer gameplayer.html
 
-If you want to install the Player applet on your web server, copy
-gameplayer.html (included in the jar file), and GamePlayer.jar to the server.
 The MasterHost parameter in gameplayer.html can be set to the IP address of
 the Master host, which will allow players to connect to it.
 
-The Player applet communicates with the Master via Java RMI (Remote Method
-Invocation), necessitating the signing of the applet with the jarsigner
+The Player communicates with the Master via Java RMI (Remote Method
+Invocation), necessitating the signing of the GamePlayer.jar with the jarsigner
 command, invoked from the buildgame.bat script. The jarsigner command expects
 to find a public/private key pair on your computer having the alias "ugame".
 This can be created with the keytool command as follows:

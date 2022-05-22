@@ -43,9 +43,6 @@ public class GamePlayer extends JApplet implements GameUpdate, ActionListener, R
    static final int GUI_WIDTH  = GameItems.ITEM_PANEL_WIDTH;
    static final int GUI_HEIGHT = (GameItems.ITEM_PANEL_HEIGHT * (int)((double)GameItems.NUM_ITEMS * 1.5)) + 300;
 
-   // Master host IP address.
-   String host;
-
    // Sounds.
    final static String ALERT_SOUND_FILE = "notify.au";
    final static String ERROR_SOUND_FILE = "beep.au";
@@ -159,11 +156,12 @@ public class GamePlayer extends JApplet implements GameUpdate, ActionListener, R
       master = null;
       p.add(connect);
 
-      if (host == null)
+      String host = "localhost";
+      try
       {
          host = getParameter("MasterHost");
       }
-      if (host == null)
+      catch (Exception e)
       {
          host = "localhost";
       }
@@ -892,42 +890,9 @@ public class GamePlayer extends JApplet implements GameUpdate, ActionListener, R
       // Create player.
       GamePlayer player = new GamePlayer();
 
-      // Set master host IP address.
-      if ((args.length == 0) || (args.length == 1))
-      {
-         if ((args.length == 1) && args[0].equals("-help"))
-         {
-            System.err.println("Usage: java UtilityGame.GamePlayer [-MasterHost <master IP address>]");
-            System.exit(0);
-         }
-         player.host = "localhost";
-      }
-      else if (args.length == 2)
-      {
-         if (!args[0].equals("MasterHost"))
-         {
-            System.err.println("Usage: java UtilityGame.GamePlayer [-MasterHost <master IP address>]");
-            System.exit(1);
-         }
-         player.host = args[1];
-      }
-      else if (args.length == 3)
-      {
-         if (!args[1].equals("MasterHost"))
-         {
-            System.err.println("Usage: java UtilityGame.GamePlayer [-MasterHost <master IP address>]");
-            System.exit(1);
-         }
-         player.host = args[2];
-      }
-      else
-      {
-         System.err.println("Usage: java UtilityGame.GamePlayer [-MasterHost <master IP address>]");
-         System.exit(1);
-      }
-
       // Create frame.
       JFrame frame = new JFrame();
+
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setTitle("Utility Game Player");
       frame.setBounds(0, 0, 550, 649);
